@@ -1,0 +1,7 @@
+{
+  "name": "ionic-pw",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
