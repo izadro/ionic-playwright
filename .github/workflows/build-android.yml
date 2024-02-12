@@ -37,6 +37,14 @@ jobs:
     - name: Install npm dependencies
       run: npm ci
 
+    # Installation de Playwright et de ses dépendances
+    - name: Install Playwright
+      run: npx playwright install
+
+    # Exécution des tests Playwright
+    - name: Run Playwright tests
+      run: npx playwright test
+
     - name: Cache Gradle Wrapper
       uses: actions/cache@v2
       with:
