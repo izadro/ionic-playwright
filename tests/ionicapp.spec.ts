@@ -9,10 +9,10 @@ test('First test on the Ionic app', async ({page}) => {
         button: 'right'
     });
     await expect(page.locator('ion-content')).toContainText('Here\'s a small text description for the card content. Nothing more, nothing less.');
-    await page.locator('#tab-button-tab2 svg').click();
+    await page.locator('data-test=tab2').click();
     await page.getByLabel('Input with placeholder').click();
     await page.getByLabel('Input with placeholder').click();
     await page.getByLabel('Input with placeholder').fill('test');
-    await page.getByRole('button', {name: 'Send'}).click();
+    await page.getByRole('button', {name: 'Submit'}).click();
     await page.getByRole('button', {name: 'Clear'}).click();
 });
