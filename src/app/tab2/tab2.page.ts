@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-tab2',
@@ -7,6 +7,17 @@ import { Component } from '@angular/core';
 })
 export class Tab2Page {
 
-  constructor() {}
+  constructor() {
+  }
 
+  company: string | undefined;
+  address: string | undefined;
+  city: string | undefined;
+  zip: string | undefined;
+
+  soumettre() {
+    console.log({
+      company: this.company, address: this.address, city: this.city, zip: this.zip
+    });
+  }
 }
