@@ -43,7 +43,7 @@ jobs:
 
     # Exécution des tests Playwright
     - name: Run Playwright tests
-      run: npx playwright test tests
+      run: npx playwright test tests/
 
     - name: Cache Gradle Wrapper
       uses: actions/cache@v2
