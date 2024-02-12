@@ -23,18 +23,16 @@ jobs:
           node-version: '20' # Spécifiez la version de Node.js qui correspond à votre projet
 
       - name: Install Ionic and Cordova
-        run: npm install -g @ionic/cli cordova
+        run: npm install -g @ionic/cli @capacitor/core @capacitor/cli
 
       - name: Install npm dependencies
         run: npm install
 
-      - name: Add Android platform
-        run: |
-          ionic cordova platform add android
+      - name: capacitor-android-action
+        uses: Narottam04/action-capacitor-android@v1.0.0
 
       - name: Build APK
-        run: |
-          ionic cordova build android --prod
+        run: npm run build
 
       - name: Upload APK
         uses: actions/upload-artifact@v2
