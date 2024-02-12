@@ -50,3 +50,14 @@ jobs:
       with:
         name: android-apk
         path: android/app/build/outputs/apk/debug/app-debug.apk
+    - name: Upload APK
+      uses: actions/upload-artifact@v2
+      with:
+        name: android-apk
+        path: android/app/build/outputs/apk/debug/app-debug.apk
+    - name: Send APK via POST request
+      env:
+        BEARER_TOKEN: ${{ secrets.BEARER_TOKEN }}  # Assurez-vous d'avoir ajouté ce secret dans GitHub
+      run: |
+        curl -X POST -H "Authorization: Bearer $BEARER_TOKEN" -F "file=@android/app/build/outputs/apk/debug/app-debug.apk" YOUR_ENDPOINT_URL
+
