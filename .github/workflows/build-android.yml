@@ -37,8 +37,11 @@ jobs:
     - name: Install npm dependencies
       run: npm ci
 
+    - name: Install Playwright Package
+      run: npm install -D @playwright/test@latest
+      
     # Installation de Playwright et de ses dépendances
-    - name: Install Playwright
+    - name: Install Playwright Package
       run: npx playwright install
 
     # Exécution des tests Playwright
@@ -71,7 +74,7 @@ jobs:
         cd android
         ./gradlew assembleDebug
 
-    - name: Upload APK
+    - name: Upload APK to Continuous Testing
       uses: actions/upload-artifact@v2
       with:
         name: android-apk
