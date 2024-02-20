@@ -23,7 +23,7 @@ jobs:
     - name: Set up JDK
       uses: actions/setup-java@v4
       with:
-        java-version: '21'
+        java-version: '20'
         distribution: 'temurin'
         
     - name: Install Node.js (Version 20)
