@@ -5,7 +5,7 @@ on:
     branches:
       - main
       - DAIMTinit
-      - WDIOTroupo
+      - WDIO_Troupo
 jobs:
   build:
     runs-on: ubuntu-latest
